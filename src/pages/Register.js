@@ -59,14 +59,9 @@ const Register = () => {
 	const [email,setEmail] = useState('');
 	const [password, setPassword] = useState('');
     const [cPassword, setCPassword] = useState('');
-    const [passwordMatch,setPasswordMatch] = useState(true);
 	const dispatch = useDispatch();
 	const handleClick = (event) => {
-		if (password===cPassword) {
-			register(dispatch,{username,password,email});
-		} else {
-			setPasswordMatch(false);
-		}
+		register(dispatch,{username,password,email});
 	};
 	return (
 		<div>
@@ -103,7 +98,7 @@ const Register = () => {
 						</Agreement>
 						<Button onClick={()=>handleClick()}>CREATE ACCOUNT</Button>
 					</Form>
-					{!passwordMatch ? <Error>Passwords do not match!</Error>: ''}
+					{password!==cPassword ? <Error>Passwords do not match!</Error>: ''}
 					<Link to='/login' style={{textDecoration: "none", fontSize: "24px", fontWeight: "700", color: "teal", float: "right"}}>SIGN IN</Link>
 				</Wrapper>
 			</Container>

@@ -91,11 +91,7 @@ const Category = styled.span`
   font-size: 30px;
   font-weight: 500;
   padding-top: 100px;
-  ${mobile({fontSize: "18px", color:"teal"})}
-`
-const ImgCont = styled.span`
-  display: none;
-  ${mobile({display:'block'})}
+  ${mobile({fontSize: "18px", color:"teal", paddingTop:"5px"})}
 `
 const Hr = styled.hr`
   background-color: teal;
@@ -139,10 +135,7 @@ const Slider = () => {
         </Arrow>
       </Container>
       <Hr/>
-      <Category id="shop">
-        SHOP CATEGORIES
-        <ImgCont/>
-      </Category>
+      <Category id="shop">SHOP CATEGORIES</Category>
       <Hr/>
     </div>
   )

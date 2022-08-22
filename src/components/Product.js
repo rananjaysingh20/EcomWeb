@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ShoppingCartOutlined,SearchOutlined,FavoriteBorderOutlined } from '@material-ui/icons';
 import { Link } from "react-router-dom";
+import {mobile} from '../responsive';
 
 const Info = styled.div`
 	opacity: 0;
@@ -30,6 +31,7 @@ const Container = styled.div`
 	&:hover ${Info}{
 		opacity: 1;
 	}
+	${mobile({maxWidth: "180px",height:"180px"})}
 `
 const Circle = styled.div`
 	width: 200px;
@@ -38,7 +40,7 @@ const Circle = styled.div`
 	background-color: white;
 	position: absolute;
 	background-color: #f5f5f5;
-
+	${mobile({maxWidth: "100px",height:"100px"})}
 `
 const Image = styled.img`
 	height: 75%;

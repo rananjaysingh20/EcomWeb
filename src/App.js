@@ -24,7 +24,8 @@ const Wrapper = ({children}) => {
   return children
 };
 const App = () => {
-  const user = useSelector(state=>state.user.currentUser);
+  const user = useSelector((state)=>state.user.currentUser);
+  const newUser = useSelector((state)=> state.newUser.registered);
   return (
     <Router>
       <Wrapper>
@@ -35,7 +36,7 @@ const App = () => {
           <Route exact path='/cart' element={<Cart/>}/>
           <Route exact path='/success' element={<Success/>}/>
           <Route exact path='/login' element={user ? <Navigate to="/"/> : <Login/>}/>
-          <Route exact path='/register' element={user ? <Navigate to="/"/> : <Register/>}/>
+          <Route exact path='/register' element={newUser ?<Navigate to="/login"/> : <Register/>}/>
         </Routes>
       </Wrapper>
     </Router>

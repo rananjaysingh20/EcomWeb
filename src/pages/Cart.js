@@ -254,7 +254,7 @@ const Cart = () => {
 											<Image src={product.img} key={product._id}/>
 											<Details>
 												<ProductName><b>Product: </b>{product.title}</ProductName>
-												<ProductID><b>ProductID: </b>{product.id}</ProductID>
+												<ProductID><b>ProductID: </b>{product._id.slice(-6)}</ProductID>
 												<ProductColor key={product._id} color={product.color}/>
 												<ProductSize><b>ProductSize: </b>{product.size}</ProductSize>
 											</Details>
@@ -310,7 +310,7 @@ const Cart = () => {
 						}
 					</Summary>
 				</Bottom>
-				<ClearButton onClick={()=>handleClear()}>CLEAR CART</ClearButton>
+				{cart.cartTotalQuantity && <ClearButton onClick={()=>handleClear()}>CLEAR CART</ClearButton>}
 			</Wrapper>
 			<Newsletter/>
 			<Footer/>

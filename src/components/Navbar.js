@@ -121,7 +121,7 @@ const Navbar = () => {
 							<MenuItem>SIGN IN</MenuItem>
 						</Link>
 					}
-					<Link to='/cart'>
+					<Link to='/cart' style={{color:"inherit",textDecoration:"none"}}>
 						<MenuItem>
 							<Badge overlap="rectangular" badgeContent={quantity} color='primary'>
 								<ShoppingCartOutlined />

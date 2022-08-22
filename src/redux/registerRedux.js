@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const registerSlice = createSlice({
-	name:"user",
+	name:"newUser",
 	initialState: {
 		newUser:null,
 		isFetching:false,
 		error:false,
+		registered:false,
 	},
 	reducers:{
 		registerStart:(state)=> {
@@ -14,6 +15,7 @@ const registerSlice = createSlice({
 		registerSuccess:(state,action)=> {
 			state.isFetching = false;
 			state.newUser = action.payload;
+			state.registered = true;
 		},
 		registerFailure:(state)=> {
 			state.isFetching = false;
