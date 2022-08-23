@@ -310,7 +310,7 @@ const Cart = () => {
 						}
 					</Summary>
 				</Bottom>
-				{cart.cartTotalQuantity && <ClearButton onClick={()=>handleClear()}>CLEAR CART</ClearButton>}
+				{cart.cartTotalQuantity ? <ClearButton onClick={()=>handleClear()}>CLEAR CART</ClearButton> : ''}
 			</Wrapper>
 			<Newsletter/>
 			<Footer/>

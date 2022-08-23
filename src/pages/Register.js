@@ -61,7 +61,12 @@ const Register = () => {
     const [cPassword, setCPassword] = useState('');
 	const dispatch = useDispatch();
 	const handleClick = (event) => {
-		register(dispatch,{username,password,email});
+		if (password===cPassword) {
+			register(dispatch,{username,password,email});	
+		}
+		else {
+			alert("Invalid Response, passwords must match.");
+		}
 	};
 	return (
 		<div>
@@ -72,25 +77,26 @@ const Register = () => {
 					<Title>CREATE AN ACCOUNT</Title>
 					<Form>
 						<Input 
-							placeholder='first name'
+							placeholder='First name'
 						/>
 						<Input 
-							placeholder='last name'
+							placeholder='Last name'
 						/>
 						<Input 
 							placeholder='username'
 							onChange={(event)=>setUsername(event.target.value)}
 						/>
 						<Input 
-							placeholder='email'
+							placeholder='Email'
+							type='email'
 							onChange={(event)=>setEmail(event.target.value)}
 						/>
 						<Input 
-							placeholder='password'
+							placeholder='Password'
 							onChange={(event)=>setPassword(event.target.value)}
 						/>
 						<Input 
-							placeholder='confirm password'
+							placeholder='Confirm password'
 							onChange={(event)=>setCPassword(event.target.value)}
 						/>
 						<Agreement>
